@@ -1,0 +1,20 @@
+﻿using Tyuiu.SedelnikovEA.Sprint5.Task0.V30.Lib;
+
+namespace Tyuiu.SedelnikovEA.Sprint5.Task0.V30.Test
+{
+    [TestClass]
+    public class DataServiceTest
+    {
+        [TestMethod]
+        public void CheckedExistsFile()
+        {
+            DataService ds = new DataService();
+            string path = ds.SaveToFileTextData(3);
+
+            FileInfo fileInfo = new FileInfo(path);
+            bool fileExists = fileInfo.Exists;
+            bool wait = true;
+            Assert.AreEqual(wait, fileExists);
+        }
+    }
+}
